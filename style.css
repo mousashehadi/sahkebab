@@ -7,23 +7,20 @@ body {
     text-align: center;
 }
 
-/* 📌 Header & Navbar */
-header {
-    background: #8B0000;
-    color: white;
-    padding: 15px 0;
+/* 📌 Fix Header Text Spacing */
+header h1 {
+    font-size: 22px;
+    padding: 10px;
     text-align: center;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    left: 0;
-    z-index: 1000;
 }
 
-header h1 {
-    margin: 0;
-    font-size: 24px;
+/* 🌟 Mobile Header Fix */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 18px;
+    }
 }
+
 
 /* 🎯 Navbar Styling */
 nav {
