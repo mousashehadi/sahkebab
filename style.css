@@ -68,7 +68,7 @@ nav ul li a:hover {
     border-radius: 5px;
 }
 
-/* 📱 Mobile Menu Styling */
+/* 🎯 Mobile Menu Animation */
 @media (max-width: 768px) {
     nav ul {
         display: none;
@@ -81,11 +81,17 @@ nav ul li a:hover {
         left: 0;
         padding: 10px;
         text-align: center;
+        opacity: 0;
+        transform: translateY(-10px);
+        transition: opacity 0.3s ease, transform 0.3s ease;
     }
 
     nav ul.show {
-        display: flex; /* Show menu when toggled */
+        display: flex;
+        opacity: 1;
+        transform: translateY(0);
     }
+}
 
     .menu-toggle {
         display: block;
