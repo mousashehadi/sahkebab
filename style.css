@@ -1,17 +1,9 @@
-/* Общие стили */
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f5f5f5;
-    text-align: center;
-}
-
-/* Заголовок */
+/* 🌟 Improve Header & Navbar */
 header {
     background: #8B0000;
     color: white;
     padding: 15px 0;
+    text-align: center;
     position: fixed;
     width: 100%;
     top: 0;
@@ -24,11 +16,80 @@ header h1 {
     font-size: 24px;
 }
 
-/* Навигация */
+/* 🎯 Style Navbar */
+nav {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
 nav ul {
     list-style: none;
     padding: 0;
-    margin: 10px 0;
+    margin: 0;
     display: flex;
-    justify-content: center;
-    gap: 20
+    gap: 20px;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* 📱 Responsive Navbar */
+.menu-toggle {
+    display: none; /* Hide on large screens */
+    background: #8B0000;
+    color: white;
+    padding: 10px;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    border-radius: 5px;
+}
+
+/* 📱 Mobile Styles */
+@media (max-width: 768px) {
+    nav ul {
+        display: none;
+        flex-direction: column;
+        gap: 10px;
+        background: #8B0000;
+        position: absolute;
+        width: 100%;
+        top: 50px;
+        left: 0;
+        padding: 10px;
+        text-align: center;
+    }
+
+    nav ul.show {
+        display: flex; /* Show menu when toggled */
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+}
+
+/* 📸 Fix Large Image */
+img {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    border-radius: 10px;
+}
