@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Кафе | Главная</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>Добро пожаловать в наше кафе!</h1>
+    <button class="menu-toggle">☰</button>
+    <nav>
+        <ul>
+            <li><a href="index.html">Главная</a></li>
+            <li><a href="menu.html">Меню</a></li>
+            <li><a href="contacts.html">Контакты</a></li>
+            <li><a href="booking.html">Бронирование</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section>
+    <h2>О нашем кафе</h2>
+    <p>Мы предлагаем вкусную еду, уютную атмосферу и отличный сервис.</p>
+    <img src="images/cafe.jpg" alt="Наше кафе">
+</section>
+
+<footer>
+    <p>© 2025 Кафе. Все права защищены.</p>
+</footer>
+
+<!-- 📌 Скрипт для мобильного меню -->
+<script>
+    document.querySelector(".menu-toggle").addEventListener("click", function() {
+        document.querySelector("nav ul").classList.toggle("show");
+    });
+</script>
+
+</body>
+</html>

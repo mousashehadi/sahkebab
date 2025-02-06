@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Бронирование | Кафе</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Бронирование столиков</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="menu.html">Меню</a></li>
+                <li><a href="contacts.html">Контакты</a></li>
+                <li><a href="booking.html">Бронирование</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section class="booking">
+        <h2>Забронируйте столик</h2>
+        <form id="bookingForm">
+            <label>Имя:</label>
+            <input type="text" name="name" required>
+            
+            <label>Телефон:</label>
+            <input type="tel" name="phone" required>
+
+            <label>Дата:</label>
+            <input type="date" name="date" required>
+
+            <label>Время:</label>
+            <input type="time" name="time" required>
+
+            <label>Количество гостей:</label>
+            <input type="number" name="guests" min="1" required>
+
+            <button type="submit">Забронировать</button>
+        </form>
+
+        <p id="bookingMessage" style="display:none; color: green; font-weight: bold; margin-top: 10px;">
+            ✅ Ваш столик успешно забронирован!
+        </p>
+    </section>
+
+    <footer>
+        <p>© 2025 Кафе. Все права защищены.</p>
+    </footer>
+
+    <script>
+        document.getElementById("bookingForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            document.getElementById("bookingMessage").style.display = "block";
+            setTimeout(() => { document.getElementById("bookingMessage").style.display = "none"; }, 5000);
+            this.reset();
+        });
+    </script>
+</body>
+</html>

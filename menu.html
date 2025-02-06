@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Меню | Кафе</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Меню</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="menu.html">Меню</a></li>
+                <li><a href="contacts.html">Контакты</a></li>
+                <li><a href="booking.html">Бронирование</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section>
+        <h2>Наше меню</h2>
+        <div class="menu">
+            <div class="menu-item">
+                <img src="images/shashlik.jpg" alt="Шашлык">
+                <h3>Шашлык из баранины</h3>
+                <p>Сочный шашлык с ароматными специями</p>
+                <span>750 руб.</span>
+                <button class="order-btn" data-item="Шашлык из баранины" data-price="750">Заказать</button>
+            </div>
+            <div class="menu-item">
+                <img src="images/soup.jpg" alt="Суп Харчо">
+                <h3>Суп Харчо</h3>
+                <p>Традиционный грузинский суп с мясом</p>
+                <span>400 руб.</span>
+                <button class="order-btn" data-item="Суп Харчо" data-price="400">Заказать</button>
+            </div>
+            <div class="menu-item">
+                <img src="images/pizza.jpg" alt="Пицца">
+                <h3>Пицца "Маргарита"</h3>
+                <p>Классическая итальянская пицца</p>
+                <span>600 руб.</span>
+                <button class="order-btn" data-item="Пицца Маргарита" data-price="600">Заказать</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="cart">
+        <h2>🛒 Корзина</h2>
+        <ul id="cart-items"></ul>
+        <p><strong>Итого: <span id="total-price">0</span> руб.</strong></p>
+        <button id="checkout">Оформить заказ</button>
+    </section>
+
+    <footer>
+        <p>© 2025 Кафе. Все права защищены.</p>
+    </footer>
+
+    <script>
+        let cart = [];
+        document.querySelectorAll(".order-btn").forEach(button => {
+            button.addEventListener("click", function() {
+                let item = this.getAttribute("data-item");
+                let price = parseInt(this.getAttribute("data-price"));
+                cart.push({ item, price });
+                updateCart();
+            });
+        });
+
+        function updateCart() {
+            let cartList = document.getElementById("cart-items");
+            let totalPrice = document.getElementById("total-price");
+            cartList.innerHTML = "";
+            let total = 0;
+            cart.forEach((order, index) => {
+                total += order.price;
+                let li = document.createElement("li");
+                li.textContent = `${order.item} - ${order.price} руб.`;
+                cartList.appendChild(li);
+            });
+            totalPrice.textContent = total;
+        }
+
+        document.getElementById("checkout").addEventListener("click", function() {
+            if (cart.length === 0) {
+                alert("Корзина пуста!");
+                return;
+            }
+            alert("✅ Заказ оформлен!");
+            cart = [];
+            updateCart();
+        });
+    </script>
+</body>
+</html>
