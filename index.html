@@ -33,10 +33,24 @@
 
 <!-- 📌 JavaScript for Mobile Menu -->
 <script>
-    document.querySelector(".menu-toggle").addEventListener("click", function() {
-        document.querySelector("nav ul").classList.toggle("show");
+    document.addEventListener("DOMContentLoaded", function () {
+        const menuToggle = document.querySelector(".menu-toggle");
+        const navMenu = document.querySelector("nav ul");
+
+        // Toggle menu on ☰ button click
+        menuToggle.addEventListener("click", function () {
+            navMenu.classList.toggle("show");
+        });
+
+        // Close menu when clicking on a link
+        document.querySelectorAll("nav ul li a").forEach(link => {
+            link.addEventListener("click", function () {
+                navMenu.classList.remove("show");
+            });
+        });
     });
 </script>
+
 
 </body>
 </html>
