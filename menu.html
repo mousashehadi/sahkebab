@@ -1,3 +1,13 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Меню | Кафе</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
 <header>
     <h1>Добро пожаловать в наше кафе!</h1>
     <button class="menu-toggle">☰</button>
@@ -10,3 +20,22 @@
         </ul>
     </nav>
 </header>
+
+<section>
+    <h2>Меню</h2>
+    <p>Наше меню включает самые вкусные блюда...</p>
+</section>
+
+<footer>
+    <p>© 2025 Кафе. Все права защищены.</p>
+</footer>
+
+<!-- 📌 JavaScript for Mobile Menu -->
+<script>
+    document.querySelector(".menu-toggle").addEventListener("click", function() {
+        document.querySelector("nav ul").classList.toggle("show");
+    });
+</script>
+
+</body>
+</html>
