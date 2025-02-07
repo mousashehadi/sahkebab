@@ -1,38 +1,49 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Кафе | Главная</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
 
-<header>
-    <h1>Добро пожаловать в наше кафе!</h1>
-    <button class="menu-toggle">☰</button>
-    <nav>
-        <ul>
-            <li><a href="index.html">Главная</a></li>
-            <li><a href="menu.html">Меню</a></li>
-            <li><a href="contacts.html">Контакты</a></li>
-            <li><a href="booking.html">Бронирование</a></li>
-        </ul>
-    </nav>
-</header>
+header {
+    background: #880000;
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+}
 
-<section>
-    <h2>О нашем кафе</h2>
-    <p>Мы предлагаем вкусную еду, уютную атмосферу и отличный сервис.</p>
-    <img src="images/cafe.jpg" alt="Наше кафе">
-</section>
+nav ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
 
-<footer>
-    <p>© 2025 Кафе. Все права защищены.</p>
-</footer>
+nav ul li {
+    display: inline-block;
+    padding: 10px 15px;
+}
 
-<!-- 📌 Load External JavaScript for Mobile Menu -->
-<script src="menu.js"></script>
+.menu-toggle {
+    display: none;
+}
 
-</body>
-</html>
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+        background: #880000;
+        color: white;
+        padding: 10px;
+        border: none;
+        cursor: pointer;
+    }
+
+    nav ul {
+        display: none;
+        flex-direction: column;
+        background: #880000;
+        padding: 10px;
+    }
+
+    nav ul.show {
+        display: flex;
+    }
+}
