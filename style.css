@@ -1,94 +1,38 @@
-/* ✅ General Styles */
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f8f8f8;
-    text-align: center;
-}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Кафе | Главная</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-/* 🎨 Header & Navbar */
-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px 20px;
-    background: #8B0000;
-    color: white;
-}
+<header>
+    <h1>Добро пожаловать в наше кафе!</h1>
+    <button class="menu-toggle">☰</button>
+    <nav>
+        <ul>
+            <li><a href="index.html">Главная</a></li>
+            <li><a href="menu.html">Меню</a></li>
+            <li><a href="contacts.html">Контакты</a></li>
+            <li><a href="booking.html">Бронирование</a></li>
+        </ul>
+    </nav>
+</header>
 
-header h1 {
-    font-size: 22px;
-    margin: 0 auto;
-}
+<section>
+    <h2>О нашем кафе</h2>
+    <p>Мы предлагаем вкусную еду, уютную атмосферу и отличный сервис.</p>
+    <img src="images/cafe.jpg" alt="Наше кафе">
+</section>
 
-nav ul {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    gap: 15px;
-}
+<footer>
+    <p>© 2025 Кафе. Все права защищены.</p>
+</footer>
 
-nav ul li a {
-    color: white;
-    font-weight: bold;
-    text-decoration: none;
-}
+<!-- 📌 Load External JavaScript for Mobile Menu -->
+<script src="menu.js"></script>
 
-nav ul li a:hover {
-    text-decoration: underline;
-}
-
-.menu-toggle {
-    background: #8B0000;
-    color: white;
-    border: none;
-    padding: 8px 12px;
-    font-size: 18px;
-    cursor: pointer;
-    border-radius: 5px;
-}
-
-@media (max-width: 768px) {
-    nav ul {
-        display: none;
-        flex-direction: column;
-        background: #8B0000;
-        position: absolute;
-        top: 50px;
-        right: 10px;
-        width: 200px;
-        padding: 10px;
-        border-radius: 5px;
-    }
-
-    nav ul.show {
-        display: flex;
-    }
-}
-
-/* 📸 Image & Section Styles */
-img {
-    width: 100%;
-    max-width: 500px;
-    height: auto;
-    display: block;
-    margin: 0 auto;
-    border-radius: 10px;
-}
-
-section {
-    max-width: 90%;
-    margin: 20px auto;
-    background: white;
-    padding: 20px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-}
-
-footer {
-    background: #333;
-    color: white;
-    padding: 15px 0;
-    margin-top: 20px;
-}
+</body>
+</html>
